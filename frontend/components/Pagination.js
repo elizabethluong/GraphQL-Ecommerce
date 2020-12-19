@@ -27,7 +27,7 @@ const Pagination = (props) => (
         <PaginationStyles>
           <Head>
             <title>
-              Sick Fits! â€” Page {page} of {pages}
+              Page {page} of {pages}
             </title>
           </Head>
           <Link
@@ -37,11 +37,11 @@ const Pagination = (props) => (
               query: { page: page - 1 },
             }}>
             <a className="prev" aria-disabled={page <= 1}>
-              â† Prev
+              ← Prev
             </a>
           </Link>
           <p>
-            Page {props.page} of {pages}!
+            Page {props.page} of {pages}
           </p>
           <p>{count} Items Total</p>
           <Link
@@ -51,7 +51,7 @@ const Pagination = (props) => (
               query: { page: page + 1 },
             }}>
             <a className="prev" aria-disabled={page >= pages}>
-              Next â†’
+              Next →
             </a>
           </Link>
         </PaginationStyles>
