@@ -1,8 +1,11 @@
-require("dotenv").config({ path: "variables.env" });
-const createServer = require("./createServer");
-const db = require("./db");
+require('dotenv').config({ path: 'variables.env' });
+
+const cookieParser = require('cookie-parser');
+const createServer = require('./createServer');
+const db = require('./db');
 
 const server = createServer();
+server.express.use(cookieParser());
 
 server.start(
   {
@@ -11,7 +14,7 @@ server.start(
       origin: process.env.FRONTEND_URL,
     },
   },
-  (deets) => {
+  deets => {
     console.log(`Server is now running on port http://localhost:${deets.port}`);
   }
 );
